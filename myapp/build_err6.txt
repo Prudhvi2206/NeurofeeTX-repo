@@ -1,0 +1,31 @@
+
+> myapp@0.0.0 build
+> vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32m✓[39m 25 modules transformed.
+[31m✗[39m Build failed in 217ms
+[31merror during build:
+[31m[vite:esbuild] Transform failed with 1 error:
+C:/Users/prudh/OneDrive/Desktop/Neurofeetx/myapp/src/PredictiveMaintenance.jsx:277:119: ERROR: Syntax error "`"[31m
+file: [36mC:/Users/prudh/OneDrive/Desktop/Neurofeetx/myapp/src/PredictiveMaintenance.jsx:277:119[31m
+[33m
+[33mSyntax error "`"[33m
+275 |                                                  <div className="health-bar-container">
+276 |                                                      <div className="health-val">{v.engineHealth}%</div>
+277 |  ...assName="bar-bg"><div className="bar-fill" style={{ width: \`\${v.engineHealth}%\`, background: getHealthColor(v.e...
+    |                                                                 ^
+278 |                                                  </div>
+279 |                                              </td>
+[31m
+    at failureErrorWithLog (C:\Users\prudh\OneDrive\Desktop\Neurofeetx\myapp\node_modules\esbuild\lib\main.js:1467:15)
+    at C:\Users\prudh\OneDrive\Desktop\Neurofeetx\myapp\node_modules\esbuild\lib\main.js:736:50
+    at responseCallbacks.<computed> (C:\Users\prudh\OneDrive\Desktop\Neurofeetx\myapp\node_modules\esbuild\lib\main.js:603:9)
+    at handleIncomingPacket (C:\Users\prudh\OneDrive\Desktop\Neurofeetx\myapp\node_modules\esbuild\lib\main.js:658:12)
+    at Socket.readFromStdout (C:\Users\prudh\OneDrive\Desktop\Neurofeetx\myapp\node_modules\esbuild\lib\main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)[39m

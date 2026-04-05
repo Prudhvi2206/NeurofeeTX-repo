@@ -1,0 +1,67 @@
+/* Full Page Styling */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  color: white;
+}
+
+/* Center container */
+.container {
+  width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Input fields */
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+/* Buttons */
+button {
+  width: 95%;
+  padding: 10px;
+  margin-top: 15px;
+  background-color: #00c6ff;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #0072ff;
+  color: white;
+}
+
+/* Dashboard styling */
+.dashboard {
+  padding: 40px;
+  text-align: center;
+}
+
+.dashboard h2 {
+  margin-bottom: 30px;
+}
+
+/* Metrics box */
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  margin: 10px;
+  display: inline-block;
+  border-radius: 8px;
+  min-width: 200px;
+}

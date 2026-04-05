@@ -1,0 +1,31 @@
+
+> myapp@0.0.0 build
+> vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32m✓[39m 41 modules transformed.
+[31m✗[39m Build failed in 381ms
+[31merror during build:
+[31m[vite:esbuild] Transform failed with 1 error:
+C:/Users/prudh/OneDrive/Desktop/Neurofeetx/myapp/src/EnhancedAIRouteOptimization.jsx:1744:24: ERROR: Expected "}" but found "AI"[31m
+file: [36mC:/Users/prudh/OneDrive/Desktop/Neurofeetx/myapp/src/EnhancedAIRouteOptimization.jsx:1744:24[31m
+[33m
+[33mExpected "}" but found "AI"[33m
+1742 |              ...bestRoute,
+1743 |              path: optimizedPath,
+1744 |              algorithm: `AI-Enhanced-${bestRoute.algorithm}`,
+     |                          ^
+1745 |              aiOptimizations: getAIOptimizations(bestRoute, trafficData, vehicleType)
+1746 |          };
+[31m
+    at failureErrorWithLog (C:\Users\prudh\OneDrive\Desktop\Neurofeetx\myapp\node_modules\esbuild\lib\main.js:1467:15)
+    at C:\Users\prudh\OneDrive\Desktop\Neurofeetx\myapp\node_modules\esbuild\lib\main.js:736:50
+    at responseCallbacks.<computed> (C:\Users\prudh\OneDrive\Desktop\Neurofeetx\myapp\node_modules\esbuild\lib\main.js:603:9)
+    at handleIncomingPacket (C:\Users\prudh\OneDrive\Desktop\Neurofeetx\myapp\node_modules\esbuild\lib\main.js:658:12)
+    at Socket.readFromStdout (C:\Users\prudh\OneDrive\Desktop\Neurofeetx\myapp\node_modules\esbuild\lib\main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)[39m
