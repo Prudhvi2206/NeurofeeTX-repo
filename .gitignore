@@ -1,0 +1,9 @@
+*/target/*
+*/node_modules/*
+*openJdk*
+*.jar
+*.zip
+*.mv.db
+*.class
+.idea/
+*.iml

@@ -1,0 +1,66 @@
+.dashboard-container {
+    padding: 40px;
+    min-height: 100vh;
+    background: linear-gradient(to right, #e3f2fd, #ffffff);
+}
+
+.dashboard-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: #1976d2;
+}
+
+.card-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card p {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1976d2;
+}
+
+.status {
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.paid {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+}
+
+.pending {
+    background-color: #ffcdd2;
+    color: #c62828;
+}
+
+.error {
+    text-align: center;
+    color: red;
+    margin-bottom: 20px;
+}

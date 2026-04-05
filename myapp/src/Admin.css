@@ -1,0 +1,94 @@
+/* Layout */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #1a1a1a;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.6);
+}
+
+.sidebar .logo {
+    color: #00ffff;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 18px 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.sidebar li:hover {
+    color: #00ffff;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.admin-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #00ffff;
+    margin-bottom: 10px;
+}
+
+.admin-subtitle {
+    font-size: 16px;
+    color: #b0e0e6;
+    margin-bottom: 40px;
+}
+
+/* Cards */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.metric-card {
+    background: rgba(0, 0, 50, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+}
+
+.metric-card h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #00ffff;
+}
+
+.metric-card p {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.revenue {
+    border: 2px solid #00ff99;
+    box-shadow: 0 0 25px rgba(0, 255, 153, 0.4);
+}

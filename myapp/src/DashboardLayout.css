@@ -1,0 +1,387 @@
+.nf-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #f3f4f6;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #111827;
+}
+
+.nf-sidebar {
+    width: 230px;
+    background: #060b19;
+    color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 16px;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+    z-index: 10;
+}
+
+.nf-sidebar-brand {
+    font-size: 24px;
+    font-weight: 900;
+    color: #22c55e;
+    letter-spacing: -0.5px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+}
+
+.nf-sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.nf-sidebar-item {
+    border: 1px solid transparent;
+    background: transparent;
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 12px;
+    border-radius: 12px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nf-sidebar-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+}
+
+.nf-sidebar-item--active {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    border: 1px solid #22c55e;
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.15);
+}
+
+.nf-sidebar-icon {
+    width: 18px;
+    text-align: center;
+}
+
+.nf-sidebar-logout {
+    border: none;
+    margin-top: 16px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: #ef4444;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+}
+
+.nf-sidebar-logout:hover {
+    background: #dc2626;
+}
+
+.nf-main {
+    flex: 1;
+    padding: 24px 28px;
+    box-sizing: border-box;
+}
+
+.nf-main-header {
+    margin-bottom: 16px;
+}
+
+.nf-main-title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.nf-main-body {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.nf-card-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+}
+
+.nf-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 14px 16px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.nf-btn {
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: none;
+    background: #16a34a;
+    color: #f9fafb;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.nf-chart {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nf-chart-row {
+    display: grid;
+    grid-template-columns: 110px 1fr 60px;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #4b5563;
+}
+
+.nf-chart-label {
+    font-weight: 600;
+}
+
+.nf-chart-track {
+    height: 8px;
+    border-radius: 999px;
+    background: #e5e7eb;
+    overflow: hidden;
+}
+
+.nf-chart-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    transition: width 200ms ease-out;
+}
+
+.nf-chart-value {
+    text-align: right;
+    font-weight: 700;
+}
+
+.nf-card-title {
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #374151;
+}
+
+.nf-card-value {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+}
+.nf-line-chart {
+    margin-top: 12px;
+  }
+
+/* Vehicle Card Styles */
+.nf-vehicle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.nf-vehicle-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.nf-meta {
+    font-size: 12px;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nf-link {
+    color: #16a34a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nf-link:hover {
+    text-decoration: underline;
+}
+
+/* Status Chips */
+.nf-chip {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nf-chip--available {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.nf-chip--inuse {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.nf-chip--maintenance {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Telemetry Section */
+.nf-telemetry {
+    margin-top: 12px;
+    padding: 10px;
+    background: #f9fafb;
+    border-radius: 8px;
+}
+
+.nf-telemetry-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.nf-telemetry-row span {
+    color: #4b5563;
+}
+
+.nf-telemetry-row strong {
+    color: #111827;
+}
+
+/* Progress Bar for Battery/Fuel */
+.nf-progress-track {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.nf-progress-fill {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 300ms ease-out, background 300ms ease-out;
+}
+
+/* Card Actions */
+.nf-card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Form Styles */
+.nf-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.nf-form-actions {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    grid-column: 1 / -1;
+    margin-top: 4px;
+}
+
+/* Button Variants */
+.nf-btn--ghost {
+    background: transparent;
+    color: #16a34a;
+    border: 1px solid #16a34a;
+}
+
+.nf-btn--ghost:hover {
+    background: #16a34a;
+    color: #fff;
+}
+
+.nf-btn--danger {
+    background: #ef4444;
+}
+
+.nf-btn--danger:hover {
+    background: #dc2626;
+}
+
+.nf-btn--info {
+    background: #3b82f6;
+}
+
+.nf-btn--info:hover {
+    background: #2563eb;
+}
+
+/* Form Inputs */
+.nf-card input,
+.nf-card select {
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 13px;
+    background: #fff;
+    transition: border-color 150ms ease;
+}
+
+.nf-card input:focus,
+.nf-card select:focus {
+    outline: none;
+    border-color: #16a34a;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+.nf-card label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 900px) {
+    .nf-layout {
+        flex-direction: column;
+    }
+
+    .nf-sidebar {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .nf-sidebar-menu {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .nf-sidebar-logout {
+        margin-top: 0;
+    }
+}
+

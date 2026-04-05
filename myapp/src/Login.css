@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.login-container {
+    height: 100vh;
+    background: url("/public/fleet-bg.jpg") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    width: 350px;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(0, 0, 50, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00ffff;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+input,
+select {
+    margin-top: 5px;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #00ffff;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #00cccc;
+}
+
+.signup-text {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.signup-text span {
+    color: #00ffff;
+    cursor: pointer;
+}
