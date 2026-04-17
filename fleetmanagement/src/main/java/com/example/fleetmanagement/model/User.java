@@ -26,6 +26,27 @@ public class User {
     @Column(nullable = false)
     private Role role;
 
+    @Column
+    private String dob;
+
+    @Column
+    private String phone;
+
+    @Column
+    private String gender;
+
+    @Column
+    private String travelPreferences;
+
+    @Column
+    private String location;
+
+    @Column
+    private Double latitude;
+
+    @Column
+    private Double longitude;
+
     // ========================
     // Constructors
     // ========================
@@ -79,4 +100,25 @@ public class User {
     public void setRole(Role role) {
         this.role = role;
     }
+
+    public String getDob() { return dob; }
+    public void setDob(String dob) { this.dob = dob; }
+
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
+
+    public String getGender() { return gender; }
+    public void setGender(String gender) { this.gender = gender; }
+
+    public String getTravelPreferences() { return travelPreferences; }
+    public void setTravelPreferences(String travelPreferences) { this.travelPreferences = travelPreferences; }
+
+    public String getLocation() { return location; }
+    public void setLocation(String location) { this.location = location; }
+
+    public Double getLatitude() { return latitude; }
+    public void setLatitude(Double latitude) { this.latitude = latitude; }
+
+    public Double getLongitude() { return longitude; }
+    public void setLongitude(Double longitude) { this.longitude = longitude; }
 }

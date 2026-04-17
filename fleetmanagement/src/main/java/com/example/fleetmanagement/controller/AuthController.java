@@ -60,10 +60,11 @@ public class AuthController {
 
         String token = jwtUtil.generateToken(claims, savedUser.getEmail());
 
-        // Return token + role
+        // Return token + role + id
         Map<String, String> response = new HashMap<>();
         response.put("token", token);
         response.put("role", savedUser.getRole().name());
+        response.put("id", savedUser.getId().toString());
 
         return ResponseEntity.ok(response);
     }
@@ -88,10 +89,11 @@ public class AuthController {
 
         String token = jwtUtil.generateToken(claims, user.getEmail());
 
-        // Return token + role
+        // Return token + role + id
         Map<String, String> response = new HashMap<>();
         response.put("token", token);
         response.put("role", user.getRole().name());
+        response.put("id", user.getId().toString());
 
         return ResponseEntity.ok(response);
     }

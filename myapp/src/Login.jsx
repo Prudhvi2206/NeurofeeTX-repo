@@ -38,6 +38,7 @@ function Login() {
 
             localStorage.setItem("token", token);
             localStorage.setItem("role", resolvedRole);
+            if (res.data.id) localStorage.setItem("userId", res.data.id);
 
             if (resolvedRole === "ADMIN") navigate("/admin");
             else if (resolvedRole === "MANAGER") navigate("/manager");
