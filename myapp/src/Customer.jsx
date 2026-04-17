@@ -148,7 +148,27 @@ function Customer() {
         }
 
         loadDashboardData();
+        loadProfileData();
     }, [navigate]);
+
+    const loadProfileData = async () => {
+        try {
+            const userId = localStorage.getItem("userId");
+            if (!userId) return;
+            const res = await axios.get(`http://localhost:8080/api/profile/${userId}`);
+            const p = res.data;
+            setProfile({
+                name: p.name || "",
+                email: p.email || "",
+                phone: p.phone || "",
+                address: p.location || "",
+                preferences: p.travelPreferences || "",
+            });
+        } catch(e) {
+            console.error("Profile load err", e);
+        }
+    };
+
 
     const loadDashboardData = async () => {
         setLoading(true);
@@ -351,6 +371,27 @@ function Customer() {
     const handleProfileChange = (e) => {
         const { name, value } = e.target;
         setProfile((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const handleSaveProfile = async (e) => {
+        e.preventDefault();
+        try {
+            const userId = localStorage.getItem("userId");
+            if (!userId) {
+                alert("User session invalid.");
+                return;
+            }
+            await axios.put(`http://localhost:8080/api/profile/${userId}`, {
+                name: profile.name,
+                phone: profile.phone,
+                location: profile.address,
+                travelPreferences: profile.preferences,
+            });
+            alert("Profile saved successfully!");
+        } catch (error) {
+            console.error("Error updating profile:", error);
+            alert("Failed to save profile.");
+        }
     };
 
     const handleSupportSubmit = (e) => {
@@ -1446,6 +1487,7 @@ function Customer() {
                         </div>
                         <button
                             type="button"
+                            onClick={handleSaveProfile}
                             style={{
                                 padding: "12px 24px",
                                 background: "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)",
