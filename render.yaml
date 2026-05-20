@@ -16,7 +16,6 @@ services:
   - type: web
     name: neurofleetx-frontend
     runtime: static
-    plan: free
     rootDir: myapp
     buildCommand: npm install && npm run build
     staticPublishPath: dist
