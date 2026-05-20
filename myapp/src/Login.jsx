@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
+import { API_BASE_URL } from './api.js';
 
 function Login() {
     const [role, setRole] = useState("");
@@ -20,7 +21,7 @@ function Login() {
         try {
             console.log("Attempting login with:", { email, password, role });
             
-            const res = await axios.post("http://localhost:8080/auth/login", {
+            const res = await axios.post(`${API_BASE_URL}/auth/login`, {
                 email,
                 password,
             });

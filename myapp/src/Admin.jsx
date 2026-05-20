@@ -5,6 +5,7 @@ import DashboardLayout from "./DashboardLayout.jsx";
 import UrbanMobilityInsights from "./UrbanMobilityInsights.jsx";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend, ArcElement, Filler } from 'chart.js';
 import { Line, Doughnut, Bar } from 'react-chartjs-2';
+import { API_BASE_URL } from './api.js';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend, ArcElement, Filler);
 
@@ -89,7 +90,7 @@ function Admin() {
         setLoading(true);
         try {
             const token = localStorage.getItem("token");
-            const res = await axios.get(`http://localhost:8080/admin/dashboard?range=${dateRange}`, {
+            const res = await axios.get(`${API_BASE_URL}/admin/dashboard?range=${dateRange}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -147,7 +148,7 @@ function Admin() {
     const loadRecentActivity = async () => {
         try {
             const token = localStorage.getItem("token");
-            const res = await axios.get("http://localhost:8080/admin/recent-activity", {
+            const res = await axios.get(`${API_BASE_URL}/admin/recent-activity`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -170,7 +171,7 @@ function Admin() {
         setUsersLoading(true);
         try {
             const token = localStorage.getItem("token");
-            const res = await axios.get("http://localhost:8080/admin/users", {
+            const res = await axios.get(`${API_BASE_URL}/admin/users`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -200,7 +201,7 @@ function Admin() {
         if (!window.confirm("Delete this user?")) return;
         try {
             const token = localStorage.getItem("token");
-            await axios.delete(`http://localhost:8080/admin/users/${id}`, {
+            await axios.delete(`${API_BASE_URL}/admin/users/${id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             await loadUsers();
@@ -219,7 +220,7 @@ function Admin() {
     const handleAddUser = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:8080/auth/register', newUser);
+            await axios.post(`${API_BASE_URL}/auth/register`, newUser);
             setShowAddUserModal(false);
             setNewUser({ name: '', email: '', password: '', role: 'DRIVER' });
             loadUsers();

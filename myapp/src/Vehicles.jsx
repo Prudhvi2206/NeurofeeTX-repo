@@ -3,7 +3,7 @@ import axios from "axios";
 import DashboardLayout from "./DashboardLayout.jsx";
 import "./Vehicles.css";
 
-const API_BASE = "http://localhost:8080";
+import { API_BASE_URL } from './api.js';
 const TELEMETRY_STORAGE_KEY = "nf_vehicleTelemetry_v1";
 
 function clamp(n, min, max) { return Math.max(min, Math.min(max, n)) }
@@ -125,7 +125,7 @@ function Vehicles() {
     const loadVehicles = async () => {
         setLoading(true)
         try {
-            const res = await axios.get(API_BASE + "/vehicles")
+            const res = await axios.get(API_BASE_URL + "/vehicles")
             setVehicles(res.data)
         } catch (e) {
             console.error("Failed to load vehicles", e)
@@ -178,9 +178,9 @@ function Vehicles() {
         e.preventDefault()
         try {
             if (editId == null) {
-                await axios.post(API_BASE + "/vehicles", { name: form.name, registration: form.registration, type: form.type, status: form.status })
+                await axios.post(API_BASE_URL + "/vehicles", { name: form.name, registration: form.registration, type: form.type, status: form.status })
             } else {
-                await axios.put(API_BASE + "/vehicles/" + editId, { id: editId, name: form.name, registration: form.registration, type: form.type, status: form.status })
+                await axios.put(API_BASE_URL + "/vehicles/" + editId, { id: editId, name: form.name, registration: form.registration, type: form.type, status: form.status })
             }
             resetForm()
             await loadVehicles()
@@ -189,7 +189,7 @@ function Vehicles() {
     }
 
     const handleDelete = async (id) => {
-        try { await axios.delete(API_BASE + "/vehicles/" + id); await loadVehicles() } catch (e) { alert("Failed to delete") }
+        try { await axios.delete(API_BASE_URL + "/vehicles/" + id); await loadVehicles() } catch (e) { alert("Failed to delete") }
     }
 
     const filteredVehicles = vehicles.filter(v => {

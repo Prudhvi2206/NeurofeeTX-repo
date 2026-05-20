@@ -6,6 +6,7 @@ import RoadNetwork from './RoadNetwork.js';
 import AdvancedRoadNetwork from './AdvancedRoadNetwork.js';
 import AIRouteOptimizationService from './AIRouteOptimizationService.js';
 import './RouteOptimization.css';
+import { API_BASE_URL } from './api.js';
 
 function RouteOptimization() {
     const [vehicles, setVehicles] = useState([]);
@@ -29,7 +30,7 @@ function RouteOptimization() {
 
     const loadVehicles = async () => {
         try {
-            const res = await axios.get('http://localhost:8080/vehicles');
+            const res = await axios.get(`${API_BASE_URL}/vehicles`);
             setVehicles(res.data);
         } catch (error) {
             console.error('Error loading vehicles:', error);
@@ -251,7 +252,7 @@ function RouteOptimization() {
 
             // Fallback to API if no alternatives generated
             if (alternativeRoutes.length === 0) {
-                const res = await axios.post('http://localhost:8080/api/routes/alternatives', {
+                const res = await axios.post(`${API_BASE_URL}/api/routes/alternatives`, {
                     vehicleId: selectedVehicle,
                     startPoint,
                     endPoint
@@ -328,7 +329,7 @@ function RouteOptimization() {
 
         setLoading(true);
         try {
-            const res = await axios.post('http://localhost:8080/api/routes/load-balance', {
+            const res = await axios.post(`${API_BASE_URL}/api/routes/load-balance`, {
                 vehicleIds: selectedVehicles,
                 startPoint,
                 endPoint

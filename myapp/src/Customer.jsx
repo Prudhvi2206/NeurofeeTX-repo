@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import DashboardLayout from "./DashboardLayout.jsx";
 import RouteMap from "./RouteMap.jsx";
+import { API_BASE_URL } from './api.js';
 
 function Customer() {
     const navigate = useNavigate();
@@ -155,7 +156,7 @@ function Customer() {
         try {
             const userId = localStorage.getItem("userId");
             if (!userId) return;
-            const res = await axios.get(`http://localhost:8080/api/profile/${userId}`);
+            const res = await axios.get(`${API_BASE_URL}/api/profile/${userId}`);
             const p = res.data;
             setProfile({
                 name: p.name || "",
@@ -174,7 +175,7 @@ function Customer() {
         setLoading(true);
         try {
             const token = localStorage.getItem("token");
-            const res = await axios.get("http://localhost:8080/customer/dashboard", {
+            const res = await axios.get(`${API_BASE_URL}/customer/dashboard`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -206,7 +207,7 @@ function Customer() {
     const loadRecentActivity = async () => {
         try {
             const token = localStorage.getItem("token");
-            const res = await axios.get("http://localhost:8080/customer/recent-activity", {
+            const res = await axios.get(`${API_BASE_URL}/customer/recent-activity`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -228,7 +229,7 @@ function Customer() {
     const loadPaymentHistory = async () => {
         try {
             const token = localStorage.getItem("token");
-            const res = await axios.get("http://localhost:8080/customer/payment-history", {
+            const res = await axios.get(`${API_BASE_URL}/customer/payment-history`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -381,7 +382,7 @@ function Customer() {
                 alert("User session invalid.");
                 return;
             }
-            await axios.put(`http://localhost:8080/api/profile/${userId}`, {
+            await axios.put(`${API_BASE_URL}/api/profile/${userId}`, {
                 name: profile.name,
                 phone: profile.phone,
                 location: profile.address,

@@ -4,7 +4,7 @@ import axios from "axios";
 import DashboardLayout from "./DashboardLayout.jsx";
 import "./Vehicles.css";
 
-const API_BASE = "http://localhost:8080";
+import { API_BASE_URL } from './api.js';
 
 function Manager() {
     const navigate = useNavigate();
@@ -66,7 +66,7 @@ function Manager() {
     const loadVehicles = async () => {
         setLoading(true);
         try {
-            const res = await axios.get(API_BASE + "/vehicles");
+            const res = await axios.get(API_BASE_URL + "/vehicles");
             setVehicles(res.data);
             calculateStats(res.data);
         } catch (error) {

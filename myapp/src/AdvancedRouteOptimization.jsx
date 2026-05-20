@@ -2,6 +2,7 @@ import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import axios from 'axios';
 import RouteMap from './RouteMap.jsx';
 import './RouteOptimization.css';
+import { API_BASE_URL } from './api.js';
 
 // Advanced Route Optimization with Maps Integration and AI Algorithms
 class AdvancedRouteOptimizer {
@@ -399,7 +400,7 @@ function AdvancedRouteOptimization() {
 
     const loadVehicles = async () => {
         try {
-            const res = await axios.get('http://localhost:8080/vehicles');
+            const res = await axios.get(`${API_BASE_URL}/vehicles`);
             setVehicles(res.data);
         } catch (error) {
             console.error('Error loading vehicles:', error);

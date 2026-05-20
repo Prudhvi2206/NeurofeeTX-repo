@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import DashboardLayout from "./DashboardLayout.jsx";
+import { API_BASE_URL } from './api.js';
 
 function Driver() {
     const navigate = useNavigate();
@@ -47,7 +48,7 @@ function Driver() {
         setLoading(true);
         try {
             const token = localStorage.getItem("token");
-            const res = await axios.get("http://localhost:8080/driver/dashboard", {
+            const res = await axios.get(`${API_BASE_URL}/driver/dashboard`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -82,7 +83,7 @@ function Driver() {
     const loadRecentTrips = async () => {
         try {
             const token = localStorage.getItem("token");
-            const res = await axios.get("http://localhost:8080/driver/recent-trips", {
+            const res = await axios.get(`${API_BASE_URL}/driver/recent-trips`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -513,7 +514,7 @@ function Driver() {
                             try {
                                 const token = localStorage.getItem("token");
                                 const res = await axios.get(
-                                    "http://localhost:8080/driver/assigned-vehicle",
+                                    `${API_BASE_URL}/driver/assigned-vehicle`,
                                     {
                                         headers: {
                                             Authorization: `Bearer ${token}`,

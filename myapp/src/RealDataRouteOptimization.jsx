@@ -3,6 +3,7 @@ import axios from 'axios';
 import WorkingGoogleMap from './WorkingGoogleMap.jsx';
 import './RouteOptimization.css';
 import './RouteMap.css';
+import { API_BASE_URL } from './api.js';
 
 // Real Data Route Optimization with Google Maps Integration
 class RealDataRouteOptimizer {
@@ -507,7 +508,7 @@ function RealDataRouteOptimization() {
 
     const loadVehicles = async () => {
         try {
-            const res = await axios.get('http://localhost:8080/vehicles');
+            const res = await axios.get(`${API_BASE_URL}/vehicles`);
             setVehicles(res.data);
         } catch (error) {
             console.error('Error loading vehicles:', error);
