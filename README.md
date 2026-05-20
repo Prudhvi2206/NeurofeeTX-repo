@@ -19,35 +19,35 @@ NeuroFleetX utilizes a highly decoupled, state-of-the-art client-server architec
 
 ```mermaid
 graph TD
-    subgraph Client Tier [Frontend Client - React.js & Vite]
+    subgraph ClientTier ["Frontend Client - React.js & Vite"]
         A["Admin Strategic HUD (Glassmorphic Interface)"]
         B["Manager Fleet Inventory & Analytics HUD"]
         C["Driver Daily Pre-Trip Safety HUD"]
         D["Customer Ride Booking & Eco-Impact Portal"]
     end
 
-    subgraph Security Gateway [Spring Security Layer]
+    subgraph SecurityGateway ["Spring Security Layer"]
         E["Spring Security Filter Chain"]
         F["JWT Authentication Provider"]
     end
 
-    subgraph Backend Service Engine [Spring Boot REST API]
+    subgraph BackendServiceEngine ["Spring Boot REST API"]
         G["Route Controller (API Endpoints)"]
         H["RouteService (AI Core Routing Engine)"]
         I["Vehicle & Predictive Maintenance Tracker"]
         J["User & Role Provisioning Manager"]
     end
 
-    subgraph Cloud Integration Layer [External Services]
+    subgraph CloudIntegrationLayer ["External Services"]
         K["Google Maps API (Geocoding & Dynamic Traffic)"]
     end
 
-    subgraph Storage Tier [Persistence Layer]
+    subgraph StorageTier ["Persistence Layer"]
         L[("H2 Database Engine (Local File/Ephemeral State)")]
     end
 
     %% Client and Server Connections %%
-    Client Tier --->|1. HTTP REST Requests with Bearer JWT| E
+    ClientTier --->|1. HTTP REST Requests with Bearer JWT| E
     E --->|2. Decodes Token / Grants Role| F
     F --->|3. Forward Secure Payload| G
     
