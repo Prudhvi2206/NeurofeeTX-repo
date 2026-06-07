@@ -1000,7 +1000,7 @@ function Customer() {
                                             👤 Driver: {booking.driver}
                                         </div>
                                         {booking.time && (
-                                            <div style={{ fontSize: "14px", color: "#6b7280", fontWeight: "500", color: "#3b82f6" }}>
+                                            <div style={{ fontSize: "14px", fontWeight: "500", color: "#3b82f6" }}>
                                                 📅 {booking.time}
                                             </div>
                                         )}
