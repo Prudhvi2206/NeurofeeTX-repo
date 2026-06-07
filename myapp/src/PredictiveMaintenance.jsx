@@ -816,7 +816,7 @@ function PredictiveMaintenance() {
                     </div>
 
                     <div className="performance-footer">
-                        <p>🛡️ Powered by <strong>Neurofeetx AI</strong>. We've performed 150+ automated pre-trip safety scans in the last hour.</p>
+                        <p>🛡️ Powered by <strong>NeurofleetX AI</strong>. We've performed 150+ automated pre-trip safety scans in the last hour.</p>
                     </div>
                 </div>
             </div>

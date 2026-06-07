@@ -1745,7 +1745,7 @@ function Customer() {
                                 📧 Email Support
                             </div>
                             <div style={{ fontSize: "14px", color: "#6b7280" }}>
-                                support@neurofeetx.com<br/>
+                                support@neurofleetx.com<br/>
                                 Response within 24 hours
                             </div>
                         </div>

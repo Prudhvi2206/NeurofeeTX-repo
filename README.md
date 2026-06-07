@@ -8,7 +8,7 @@ NeuroFleetX is a next-generation urban mobility platform that couples real-time 
 
 ### 🌐 Live Production Deployment
 * **Client App URL:** [https://neurofleetx-frontend.onrender.com](https://neurofleetx-frontend.onrender.com)
-* **GitHub Repository:** [https://github.com/Prudhvi2206/NeurofeetX.git](https://github.com/Prudhvi2206/NeurofeetX.git)
+* **GitHub Repository:** [https://github.com/Prudhvi2206/NeurofleetX.git](https://github.com/Prudhvi2206/NeurofleetX.git)
 * **Blueprint API URL:** `https://neurofleetx-api.onrender.com`
 
 ---
